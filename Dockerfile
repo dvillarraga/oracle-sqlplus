@@ -16,4 +16,5 @@ ENV PATH=$ORACLE_HOME:$PATH
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
+RUN ["chmod", "+x", "/entrypoint.sh"]
 CMD ["-V"]
