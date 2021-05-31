@@ -3,4 +3,6 @@ Oracle SQLPlus
 
 ## Usage 
 
-sqlplus -s user/pass@host:port/service <<< "select 1 from dual;"
+```bash
+$ docker run --rm oraclesqlplus user/pass@host:port/service <<< "select 1 from dual;"
+```
