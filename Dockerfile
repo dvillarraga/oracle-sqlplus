@@ -15,6 +15,6 @@ ENV SQLPATH=$ORACLE_HOME
 ENV PATH=$ORACLE_HOME:$PATH
 
 COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
 RUN ["chmod", "+x", "/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["-V"]
