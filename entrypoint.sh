@@ -3,4 +3,5 @@
 set -e
 
 sleep 0.3s;
-sqlplus $@
+
+exec "$@"
