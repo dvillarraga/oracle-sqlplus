@@ -9,7 +9,8 @@ RUN wget https://download.oracle.com/otn_software/linux/instantclient/211000/ins
     && unzip oracle-basic.zip && unzip oracle-sqlplus.zip && unzip oracle-tools.zip \ 
     && rm -f oracle-basic.zip oracle-sqlplus.zip oracle-tools.zip
 
-COPY entrypoint.sh /
-RUN ["chmod", "+x", "/entrypoint.sh"]
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["sqlplus"]
+ENV ORACLE_HOME=/opt/instantclient_21_1
+ENV LD_LIBRARY_PATH=$ORACLE_HOME
+ENV SQLPATH=$ORACLE_HOME
+ENV PATH=$ORACLE_HOME:$PATH
+
